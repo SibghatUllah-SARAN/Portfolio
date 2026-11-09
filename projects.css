@@ -1,0 +1,249 @@
+/* ==========================================================================
+   CUSTOM PROJECT CARDS, ACTION BUTTONS & MODAL STYLES
+   ========================================================================== */
+
+/* Project Card Outer Container Adjustment */
+.card.project-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem;
+    overflow: hidden;
+    height: 100%;
+}
+
+/* 1. Picture Container (Adjusts picture automatically according to design) */
+.project-img-wrapper {
+    width: 100%;
+    height: 200px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    margin-bottom: 1.25rem;
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+.card.project-card:hover .project-img {
+    transform: scale(1.03);
+}
+
+/* 2. Project Title */
+.project-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+}
+
+/* 3. Short Description Box (Matches Grey Box layout in Wireframe 1) */
+.project-short-desc {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    flex-grow: 1;
+    margin-bottom: 1.25rem;
+}
+
+/* 4. Main Card Actions (Details & Demo Buttons) */
+.project-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-top: auto;
+}
+
+.btn-custom {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.65rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border: 1px solid var(--border-color);
+    text-align: center;
+}
+
+/* Details Popup Button */
+.btn-details {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+.btn-details:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* Demo / Git Link Button */
+.btn-preview {
+    background-color: var(--accent);
+    color: #ffffff;
+    border-color: var(--accent);
+}
+
+.btn-preview:hover {
+    background-color: var(--accent-hover);
+}
+
+/* ==========================================================================
+   DETAILS POPUP (MODAL STYLES - MATCHES WIREFRAME 2)
+   ========================================================================== */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s ease-in-out;
+    padding: 1rem;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    width: 100%;
+    max-width: 520px;
+    padding: 1.75rem;
+    position: relative;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+    transform: translateY(20px);
+    transition: transform 0.25s ease-in-out;
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.25rem;
+    background: transparent;
+    border: none;
+    font-size: 1.75rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.modal-close:hover {
+    color: var(--text-primary);
+}
+
+.modal-title {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    padding-right: 2rem;
+}
+
+/* Scrollable Description Box with Custom Scrollbar (Matches Image 2) */
+.modal-desc-scroll {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem;
+    max-height: 220px;
+    overflow-y: auto;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+}
+
+/* Custom Scrollbar */
+.modal-desc-scroll::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-desc-scroll::-webkit-scrollbar-track {
+    background: var(--bg-card);
+    border-radius: 4px;
+}
+
+.modal-desc-scroll::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 4px;
+}
+
+.modal-desc-scroll::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-hover);
+}
+
+/* Technology Tags inside Modal */
+.modal-tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.modal-tags .tag {
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+    border-radius: 6px;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+}
+
+/* Centered Source File / Git Link Button */
+.modal-actions {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-modal-source {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    width: auto;
+    min-width: 180px;
+}
+
+.btn-modal-source:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .project-actions {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-content {
+        padding: 1.25rem;
+    }
+}

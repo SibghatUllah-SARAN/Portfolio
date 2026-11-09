@@ -1,0 +1,128 @@
+/* ==========================================================================
+   HOME PAGE EXCLUSIVE STYLESHEET (home.css)
+   Keeps style.css completely untouched for other pages.
+   ========================================================================== */
+
+/* Hero Grid Layout */
+.hero-wrapper {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    padding: 3rem 0;
+}
+
+.hero-left {
+    display: flex;
+    flex-direction: flex;
+    flex-direction: column;
+}
+
+/* Image Container matching the requested design */
+.hero-right-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Hero Portrait Frame matching screenshot layout */
+.hero-image-card {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    background: var(--bg-card);
+    border: 2px solid var(--accent);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Geometric triangular background effect behind your portrait */
+.hero-image-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: conic-gradient(from 180deg at 50% 50%, var(--accent) 0deg, var(--bg-card) 90deg, var(--accent) 180deg, var(--bg-card) 270deg);
+    opacity: 0.85;
+    z-index: 1;
+}
+
+.hero-portrait {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    z-index: 2;
+}
+
+/* "Add Some Details" Quick-Stats Card */
+.hero-details-card {
+    background: var(--accent);
+    color: #ffffff;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    text-align: center;
+}
+
+.details-item h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+}
+
+.details-item p {
+    font-size: 0.75rem;
+    opacity: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Extra Home Sections to make page complete */
+.home-section {
+    padding: 3.5rem 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.section-tag {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.section-heading {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+/* Responsive adjustments for mobile screens */
+@media (max-width: 900px) {
+    .hero-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        padding: 1.5rem 0;
+    }
+    
+    .hero-image-card {
+        max-width: 320px;
+    }
+    
+    .hero-portrait {
+        height: 360px;
+    }
+}
