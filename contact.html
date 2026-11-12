@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | M. SibghatUllah</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional page-specific styling that strictly uses existing style.css variables */
+        .contact-hero {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem auto;
+        }
+        .contact-hero .badge-pill {
+            display: inline-block;
+            padding: 0.35rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            background-color: var(--bg-card);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        .contact-hero h1 {
+            font-size: 2.75rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        .contact-hero p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 1.75rem;
+        }
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* Top 3 Info Cards Grid */
+        .info-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        .info-card-item {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            text-decoration: none;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+        .info-card-item:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+        .info-card-item .info-label {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        .info-card-item .info-value {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Main Form & Sidebar Layout */
+        .contact-main-grid {
+            display: grid;
+            grid-template-columns: 1.35fr 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+        @media (max-width: 900px) {
+            .contact-main-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Form Controls Extra */
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        @media (max-width: 600px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background-color: var(--bg-card);
+            color: var(--text-primary);
+            font-size: 1rem;
+        }
+        .form-group select:focus,
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        /* Social Badges */
+        .social-icons-row {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        .social-btn {
+            width: 42px;
+            height: 42px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .social-btn:hover {
+            background-color: var(--accent);
+            color: #ffffff;
+            border-color: var(--accent);
+        }
+
+        .sidebar-card-spacing {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">M. Sibghat<span>Ullah</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <div class="contact-hero">
+            <span class="badge-pill">Let's Connect</span>
+            <h1>Let's Build Something Great.</h1>
+            <p>Have a project, an idea, or an opportunity? I'd love to hear from you. Let's turn your vision into reality.</p>
+            <div class="hero-actions">
+                <a href="#contact-form-section" class="btn btn-primary">Contact Me</a>
+                <a href="services.html" class="btn btn-secondary">Explore Services</a>
+            </div>
+        </div>
+
+        <!-- Top 3 Info Cards -->
+        <div class="info-cards-grid">
+            <a href="mailto:greatsibghat65@gmail.com" class="info-card-item">
+                <span class="info-label">📧 Email Me</span>
+                <span class="info-value">greatsibghat65@gmail.com</span>
+            </a>
+            <a href="https://wa.me/+923154813539" target="_blank" rel="noopener" class="info-card-item">
+                <span class="info-label">💬 WhatsApp</span>
+                <span class="info-value">Let's discuss your project (+92 315 4813539)</span>
+            </a>
+            <div class="info-card-item" style="cursor: default;">
+                <span class="info-label">📍 Location</span>
+                <span class="info-value">Multan, Pakistan — Working Worldwide</span>
+            </div>
+        </div>
+
+        <!-- Main Form & Sidebar Grid -->
+        <div class="contact-main-grid" id="contact-form-section">
+            <!-- Left: Send a Message Form -->
+            <div class="card">
+                <h3 style="margin-bottom: 0.25rem;">Send a Message</h3>
+                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">Tell me a little about what you need.</p>
+                
+                <form id="mainContactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Your Full Name</label>
+                            <input type="text" id="fullName" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Your Email Address</label>
+                            <input type="email" id="emailAddress" placeholder="john@example.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Select Contact Reason / Service</label>
+                        <select id="contactReason">
+                            <option value="General Inquiry">General Inquiry / Collaboration</option>
+                            <option value="WhatsApp AI Agent">WhatsApp AI Agent</option>
+                            <option value="Mathematical Thesis & Presentations">Mathematical Thesis & Presentations</option>
+                            <option value="Final Year Project (Python / C++ / JS / SQL)">Final Year Project (Coding / AI / ML)</option>
+                            <option value="Web Designing & Front-End Development">Web Designing & Front-End Development</option>
+                            <option value="CV, Resume & PPT Making">CV, Resume & PPT Making</option>
+                            <option value="Academic Research & Plagiarism Reports">Academic Research & Plagiarism Reports</option>
+                            <option value="Graphic Design, Logo & Video Editing">Graphic Design, Logo & Video Editing</option>
+                            <option value="Digital Ads (Google, Meta, IG, YT, TikTok)">Digital Ads (Google, Meta, IG, YT, TikTok)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Subject</label>
+                        <input type="text" id="msgSubject" placeholder="Project Discussion / Inquiry" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea id="msgBody" rows="5" placeholder="Write your message..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; border: none; cursor: pointer; text-align: center;">
+                        Send Message &rarr;
+                    </button>
+                    <p style="text-align: center; font-size: 0.78rem; color: var(--text-secondary); margin-top: 1rem;">
+                        Secure direct submission — routes instantly to WhatsApp & Email.
+                    </p>
+                </form>
+            </div>
+
+            <!-- Right Sidebar: Connect With Me & Have a Project -->
+            <div class="sidebar-card-spacing">
+                <div class="card">
+                    <h3 style="margin-bottom: 0.25rem;">Connect With Me</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0.5rem;">Find me on professional platforms.</p>
+                    <div class="social-icons-row">
+                        <a href="https://github.com" target="_blank" rel="noopener" class="social-btn" title="GitHub">GH</a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-btn" title="LinkedIn">in</a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener" class="social-btn" title="Instagram">IG</a>
+                        <a href="https://facebook.com" target="_blank" rel="noopener" class="social-btn" title="Facebook">f</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 style="margin-bottom: 0.25rem;">Have a Project?</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.25rem;">Let's discuss your requirements, budget and timeline.</p>
+                    <a href="services.html" style="color: var(--accent); text-decoration: none; font-weight: 600; font-size: 0.95rem;">
+                        Explore my services &nearr;
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 M. SibghatUllah. All rights reserved.</p>
+    </footer>
+
+    <!-- Working Form Logic Script -->
+    <script>
+        // Check if user clicked a service from services.html and auto-fill the dropdown/subject
+        const urlParams = new URLSearchParams(window.location.search);
+        const selectedService = urlParams.get('service');
+        if (selectedService) {
+            const selectDropdown = document.getElementById("contactReason");
+            // Check if option exists, otherwise select general
+            let optionFound = false;
+            for (let option of selectDropdown.options) {
+                if (option.value.toLowerCase().includes(selectedService.toLowerCase()) || selectedService.toLowerCase().includes(option.value.toLowerCase())) {
+                    selectDropdown.value = option.value;
+                    optionFound = true;
+                    break;
+                }
+            }
+            if (!optionFound) {
+                // Add custom option dynamically if it's a specific service
+                let newOpt = document.createElement("option");
+                newOpt.value = selectedService;
+                newOpt.textContent = selectedService;
+                selectDropdown.appendChild(newOpt);
+                selectDropdown.value = selectedService;
+            }
+            document.getElementById("msgSubject.value" || "msgSubject").value = `Inquiry regarding: ${selectedService}`;
+        }
+
+        // Handle Form Submission Securely via WhatsApp / Email fallback
+        document.getElementById("mainContactForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById("fullName").value.trim();
+            const email = document.getElementById("emailAddress").value.trim();
+            const reason = document.getElementById("contactReason").value;
+            const subject = document.getElementById("msgSubject").value.trim();
+            const message = document.getElementById("msgBody").value.trim();
+
+            const formattedText = `*New Contact Inquiry*\n\n*Name:* ${name}\n*Email:* ${email}\n*Service/Topic:* ${reason}\n*Subject:* ${subject}\n*Message:* ${message}`;
+            
+            const whatsappUrl = `https://wa.me/+923154813539?text=${encodeURIComponent(formattedText)}`;
+            
+            // Open WhatsApp with prefilled message
+            window.open(whatsappUrl, '_blank');
+        });
+    </script>
+
+</body>
+</html>

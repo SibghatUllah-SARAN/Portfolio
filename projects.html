@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | M. SibghatUllah</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Separate CSS file for buttons, project cards, and popup modal -->
+    <link rel="stylesheet" href="projects.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">M. Sibghat<span>Ullah</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- Counter and Heading Section -->
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem; margin-bottom: 2.5rem;">
+            <div>
+                <h1 class="page-title" style="margin-bottom: 0;">Featured Projects</h1>
+                <p class="page-subtitle" style="margin-bottom: 0;">A collection of custom web applications, mathematical tools, and AI solutions.</p>
+            </div>
+            
+            <!-- Counter Box -->
+            <div class="card" style="padding: 1rem 1.5rem; text-align: center; min-width: 160px;">
+                <span id="counter" style="font-size: 2rem; font-weight: 700; color: var(--accent);">0</span>
+                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.2rem;">Successful Projects</p>
+            </div>
+        </div>
+
+        <div class="grid-2">
+            <!-- PROJECT 1 -->
+            <div class="card project-card">
+                <div class="project-img-wrapper">
+                    <img src="https://raw.githubusercontent.com/SibghatUllah-SARAN/high-chase/refs/heads/main/High%20Chase%20E-Commerce%20Showcase.png" alt="High Chase Shoe Store" class="project-img">
+                </div>
+                <h3 class="project-title">High Chase Shoe Store</h3>
+                <div class="project-short-desc">
+                    Full e-commerce platform prototype featuring responsive catalog listings, product drawers, and dynamic navigation for local footwear store.
+                </div>
+                <div class="project-actions">
+                    <button class="btn-custom btn-details" onclick="openModal('modal-1')">Details</button>
+                    <a href="https://sibghatullah-saran.github.io/high-chase/" target="_blank" class="btn-custom btn-preview">Demo / Git Link</a>
+                </div>
+            </div>
+
+            <!-- PROJECT 2 -->
+            <div class="card project-card">
+                <div class="project-img-wrapper">
+                    <img src="https://via.placeholder.com/600x350?text=Kirchhoff+Solver" alt="Kirchhoff's Circuit Solver" class="project-img">
+                </div>
+                <h3 class="project-title">Kirchhoff's Circuit Solver</h3>
+                <div class="project-short-desc">
+                    Computational program resolving electrical network mesh equations through numerical Gauss-Jordan matrix reduction algorithms.
+                </div>
+                <div class="project-actions">
+                    <button class="btn-custom btn-details" onclick="openModal('modal-2')">Details</button>
+                    <a href="https://github.com" target="_blank" class="btn-custom btn-preview">Demo / Git Link</a>
+                </div>
+            </div>
+
+            <!-- PROJECT 3 -->
+            <div class="card project-card">
+                <div class="project-img-wrapper">
+                    <img src="https://via.placeholder.com/600x350?text=Factic+Orbit+Workflow" alt="Factic Orbit Workflow" class="project-img">
+                </div>
+                <h3 class="project-title">Factic Orbit Workflow</h3>
+                <div class="project-short-desc">
+                    Automated media scheduling and posting pipeline constructed via n8n integration engines and REST APIs for YouTube automation.
+                </div>
+                <div class="project-actions">
+                    <button class="btn-custom btn-details" onclick="openModal('modal-3')">Details</button>
+                    <a href="https://github.com" target="_blank" class="btn-custom btn-preview">Demo / Git Link</a>
+                </div>
+            </div>
+
+            <!-- PROJECT 4 -->
+            <div class="card project-card">
+                <div class="project-img-wrapper">
+                    <img src="https://raw.githubusercontent.com/SibghatUllah-SARAN/Whatsapp-agent/refs/heads/main/WhatsApp%20Agent.png" alt="Custom WhatsApp AI Agent" class="project-img">
+                </div>
+                <h3 class="project-title">Custom WhatsApp AI Agent</h3>
+                <div class="project-short-desc">
+                    Automated WhatsApp assistant designed to address client inquiries, process routine responses, and sync real-time chat data.
+                </div>
+                <div class="project-actions">
+                    <button class="btn-custom btn-details" onclick="openModal('modal-4')">Details</button>
+                    <a href="https://sibghatullah-saran.github.io/Whatsapp-agent/" target="_blank" class="btn-custom btn-preview">Demo / Git Link</a>
+                </div>
+            </div>
+            <!-- PROJECT 5 -->
+            <div class="card project-card">
+                <div class="project-img-wrapper">
+                    <img src="https://raw.githubusercontent.com/SibghatUllah-SARAN/Basic-boat/refs/heads/main/Bot.png" alt="Custom WhatsApp AI Agent" class="project-img">
+                </div>
+                <h3 class="project-title">Featuristic ChatBot</h3>
+                <div class="project-short-desc">
+                    SRAAN AI is an AI-powered personal intelligence and productivity dashboard designed to bring multiple AI services and intelligent departments into one centralized platform.
+                </div>
+                <div class="project-actions">
+                    <button class="btn-custom btn-details" onclick="openModal('modal-5')">Details</button>
+                    <a href="https://sibghatullah-saran.github.io/Basic-boat/" target="_blank" class="btn-custom btn-preview">Demo / Git Link</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- MODAL POPUPS (Detailed Structure Matching Image 2) -->
+
+    <!-- Modal 1 -->
+    <div id="modal-1" class="modal-overlay" onclick="closeModalOnOuter(event, 'modal-1')">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('modal-1')">&times;</button>
+            <h2 class="modal-title">High Chase Shoe Store</h2>
+            <div class="modal-desc-scroll">
+                <p><strong>Comprehensive Overview:</strong></p>
+                <p>This project is a dedicated single-page responsive e-commerce web platform created specifically for the High Chase Shoe Store in Multan. Built with an eye-catching yellow and black color scheme, it features lightweight frontend animations, an integrated product catalog, cart drawer functionality, and quick-ordering action buttons optimized for high conversion on mobile screens.</p>
+                <br>
+                <p><strong>Key Features:</strong></p>
+                <ul style="padding-left: 1.2rem; margin-top: 0.5rem;">
+                    <li>Fully responsive CSS Grid & Flexbox layout.</li>
+                    <li>Interactive category tabs and instant product search filter.</li>
+                    <li>Direct WhatsApp checkout link integration.</li>
+                    <li>Optimized image lazy loading for ultra-fast mobile speeds.</li>
+                </ul>
+            </div>
+            <div class="modal-tags">
+                <span class="tag">HTML/CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">E-Commerce</span>
+            </div>
+            <div class="modal-actions">
+                <a href="https://github.com/SibghatUllah-SARAN/high-chase" target="_blank" class="btn-custom btn-modal-source">Source File / Git Link</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div id="modal-2" class="modal-overlay" onclick="closeModalOnOuter(event, 'modal-2')">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('modal-2')">&times;</button>
+            <h2 class="modal-title">Kirchhoff's Circuit Solver</h2>
+            <div class="modal-desc-scroll">
+                <p><strong>Comprehensive Overview:</strong></p>
+                <p>Designed and coded as a scientific computation project combining Linear Algebra and Electrical Circuit theory. The application accepts complex multi-loop circuit configurations with voltage sources and resistors, formulates loop/mesh equations using Kirchhoff's Voltage Law (KVL), and solves the unknown loop currents using Gauss-Jordan matrix reduction algorithm implemented in Python.</p>
+                <br>
+                <p><strong>Key Features:</strong></p>
+                <ul style="padding-left: 1.2rem; margin-top: 0.5rem;">
+                    <li>Step-by-step matrix reduction output for academic verification.</li>
+                    <li>Handles arbitrary N-loop linear electrical networks.</li>
+                    <li>Precision floating-point error handling and validation.</li>
+                </ul>
+            </div>
+            <div class="modal-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Linear Algebra</span>
+                <span class="tag">Algorithms</span>
+            </div>
+            <div class="modal-actions">
+                <a href="https://github.com" target="_blank" class="btn-custom btn-modal-source">Source File / Git Link</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div id="modal-3" class="modal-overlay" onclick="closeModalOnOuter(event, 'modal-3')">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('modal-3')">&times;</button>
+            <h2 class="modal-title">Factic Orbit Workflow</h2>
+            <div class="modal-desc-scroll">
+                <p><strong>Comprehensive Overview:</strong></p>
+                <p>An automated digital publishing pipeline built for the Factic Orbit content engine. Utilizing n8n automation software hosted on cloud servers, this workflow auto-fetches generated media assets, formats social media captions, schedules posts, and triggers YouTube Shorts API uploads automatically without manual intervention.</p>
+                <br>
+                <p><strong>Key Features:</strong></p>
+                <ul style="padding-left: 1.2rem; margin-top: 0.5rem;">
+                    <li>Automated webhooks connecting cloud storage and Meta API.</li>
+                    <li>Dynamic caption generator and hashtag insertion logic.</li>
+                    <li>Automated execution logging and failure notifications via Telegram.</li>
+                </ul>
+            </div>
+            <div class="modal-tags">
+                <span class="tag">n8n</span>
+                <span class="tag">Meta API</span>
+                <span class="tag">Automation</span>
+            </div>
+            <div class="modal-actions">
+                <a href="https://github.com" target="_blank" class="btn-custom btn-modal-source">Source File / Git Link</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 4 -->
+    <div id="modal-4" class="modal-overlay" onclick="closeModalOnOuter(event, 'modal-4')">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('modal-4')">&times;</button>
+            <h2 class="modal-title">Custom WhatsApp AI Agent</h2>
+            <div class="modal-desc-scroll">
+                <p><strong>Comprehensive Overview:</strong></p>
+                <p>An intelligent WhatsApp chatbot backend designed to handle client communications, answer FAQs, schedule appointments, and query backend databases. Built with Meta Developer WhatsApp Business APIs, Python backend scripts, and Large Language Model (LLM) endpoints.</p>
+                <br>
+                <p><strong>Key Features:</strong></p>
+                <ul style="padding-left: 1.2rem; margin-top: 0.5rem;">
+                    <li>Context-aware natural language understanding.</li>
+                    <li>Real-time message routing and automated fallback support.</li>
+                    <li>Customizable system prompt and knowledge-base injection.</li>
+                </ul>
+            </div>
+            <div class="modal-tags">
+                <span class="tag">Python</span>
+                <span class="tag">LLM APIs</span>
+                <span class="tag">AI Chatbot</span>
+            </div>
+            <div class="modal-actions">
+                <a href="https://github.com/SibghatUllah-SARAN/Whatsapp-agent/" target="_blank" class="btn-custom btn-modal-source">Source File / Git Link</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 5 -->
+    <div id="modal-5" class="modal-overlay" onclick="closeModalOnOuter(event, 'modal-5')">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('modal-4')">&times;</button>
+            <h2 class="modal-title">Custom Sraan AI ChatBot</h2>
+            <div class="modal-desc-scroll">
+                <p><strong>Comprehensive Overview:</strong></p>
+                <p>The platform provides a centralized command center where users can interact with different AI departments, monitor system activity, manage schedules, and access AI-powered tools. It combines voice interaction, task management, memory insights, multiple LLM integrations, and system monitoring to create an all-in-one intelligent assistant.</p>
+                <br>
+                <p><strong>Key Features:</strong></p>
+                <ul style="padding-left: 1.2rem; margin-top: 0.5rem;">
+                    <li><strong>SRAAN EDU:</strong>  Academic assistance, mathematics, engineering, and university problem-solving.</li>
+                    <li><strong>SRAAN CODE:</strong> Coding support for Python, C++, and JavaScript with a sandbox environment.</li>
+                    <li><strong>SRAAN BIZ:</strong> Business consulting, strategic planning, and proposal support.</li>
+                    <li><strong>SRAAN RSCH:</strong> Research assistance, academic papers, and citations.</li>
+                    <li><strong>SRAAN LIFE:</strong> Productivity management, deadlines, and goal tracking.</li>
+                    <li><strong>SRAAN DATA:</strong> Data analytics, CSV processing, interactive charts, and machine learning.</li>
+                </ul>
+            </div>
+            <div class="modal-tags">
+                <span class="tag">Python</span>
+                <span class="tag">LLM APIs</span>
+                <span class="tag">AI Chatbot</span>
+            </div>
+            <div class="modal-actions">
+                <a href="https://github.com" target="_blank" class="btn-custom btn-modal-source">Source File / Git Link</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 M. SibghatUllah. All rights reserved.</p>
+    </footer>
+
+    <!-- INTERACTION SCRIPTS -->
+    <script>
+        // Counter Animation
+        const targetNumber = 10;
+        const animationDurationMs = 2000;
+        const counterElement = document.getElementById('counter');
+        let startTime = null;
+
+        function animateCounter(currentTime) {
+            if (!startTime) startTime = currentTime;
+            const progress = Math.min((currentTime - startTime) / animationDurationMs, 1);
+            const currentCount = Math.floor(progress * targetNumber);
+            counterElement.textContent = currentCount + (progress === 1 ? '+' : '');
+
+            if (progress < 1) {
+                requestAnimationFrame(animateCounter);
+            }
+        }
+        requestAnimationFrame(animateCounter);
+
+        // Modal Controls
+        function openModal(id) {
+            document.getElementById(id).classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function closeModalOnOuter(event, id) {
+            if (event.target === document.getElementById(id)) {
+                closeModal(id);
+            }
+        }
+    </script>
+
+</body>
+</html>

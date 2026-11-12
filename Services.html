@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | M. SibghatUllah</title>
+    <!-- Connected to existing style.css (untouched) + new services.css -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="services.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">M. Sibghat<span>Ullah</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1 class="page-title">30+ Services Under One Roof</h1>
+        <p class="page-subtitle">Academic, technical, creative, and AI automation solutions tailored for students, researchers, and businesses.</p>
+
+        <!-- ==============================================================
+             PART 1: THE 7 ESSENTIAL CLIENT GUIDE SECTIONS (FIRST)
+             ============================================================== -->
+        <section class="overview-section" aria-label="Service Guide">
+            <div class="overview-grid">
+                <!-- 1. What services you provide -->
+                <div class="overview-card">
+                    <span class="overview-number">01</span>
+                    <h3>What Services We Provide</h3>
+                    <p>Over 30 specialized services including WhatsApp AI Agents, Python/C++/JS/SQL Final Year Projects, ML Research Models, Web Development, Mathematical & Multi-Disciplinary Theses, Plagiarism Reports, Graphic Design, Video Editing, and Digital Ads.</p>
+                </div>
+
+                <!-- 2. What problems you can solve -->
+                <div class="overview-card">
+                    <span class="overview-number">02</span>
+                    <h3>What Problems We Solve</h3>
+                    <p>We eliminate tight academic deadlines, complex mathematical & coding bottlenecks, high plagiarism scores, unorganized Excel datasets, manual customer support replies, and low online business visibility.</p>
+                </div>
+
+                <!-- 3. How customers can hire you -->
+                <div class="overview-card">
+                    <span class="overview-number">03</span>
+                    <h3>How Customers Can Hire Us</h3>
+                    <p>Browse our services below, click <strong>Explore</strong> to inspect details, and hit <strong>Contact Now</strong> (or message directly on WhatsApp/Email) with your project requirements and deadline to get started immediately.</p>
+                </div>
+
+                <!-- 4. How much your services might cost -->
+                <div class="overview-card">
+                    <span class="overview-number">04</span>
+                    <h3>How Much Services Might Cost</h3>
+                    <p>Pricing is flexible and student- and business-friendly—starting from affordable task-based rates for CVs, math problems, and data entry, up to custom quotes for full-stack websites, AI agents, and complete theses.</p>
+                </div>
+
+                <!-- 5. How customers can communicate with you -->
+                <div class="overview-card">
+                    <span class="overview-number">05</span>
+                    <h3>How You Can Communicate</h3>
+                    <p>Direct, fast 1-on-1 communication via WhatsApp (<strong>+92 315 4813539</strong>) or Email (<strong>greatsibghat65@gmail.com</strong>) with regular milestone previews throughout your project.</p>
+                </div>
+
+                <!-- 6. How they can trust your work -->
+                <div class="overview-card">
+                    <span class="overview-number">06</span>
+                    <h3>How You Can Trust Our Work</h3>
+                    <p>Every academic document is verified with official plagiarism & grammar checks authenticated by scholars, while software/AI projects come with clean source code, live demos, and free revisions.</p>
+                </div>
+
+                <!-- 7. How they will receive their completed project -->
+                <div class="overview-card">
+                    <span class="overview-number">07</span>
+                    <h3>How You Receive Completed Work</h3>
+                    <p>Delivered directly to your WhatsApp or Email in your preferred format—Word/LaTeX/PDF, PPTX, Excel sheets, GitHub repositories, ZIP archives, or live deployed web links.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==============================================================
+             PART 2: OUR SERVICES GRID (PICTURE 3 LAYOUT)
+             ============================================================== -->
+        <section id="services-catalog">
+            <h2 class="section-heading">Our Services</h2>
+            <p class="section-sub">Click <strong>Explore</strong> on any card to view full details or <strong>Contact</strong> to book immediately.</p>
+
+            <!-- Search & Category Filter Controls -->
+            <div class="services-controls">
+                <input type="text" id="serviceSearch" class="search-input" placeholder="Search any of the 30+ services (e.g., WhatsApp Agent, Thesis, Python, Ads)...">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All (31)</button>
+                    <button class="filter-btn" data-filter="ai-dev">AI & Coding</button>
+                    <button class="filter-btn" data-filter="academic">Academic & Math</button>
+                    <button class="filter-btn" data-filter="design-media">Design & Video</button>
+                    <button class="filter-btn" data-filter="marketing-data">Marketing & Data</button>
+                </div>
+            </div>
+
+            <!-- Cards Container (Rendered dynamically from customizable JS config below) -->
+            <div class="services-grid" id="servicesGrid"></div>
+        </section>
+
+        <!-- Direct Contact CTA -->
+        <section class="cta-banner">
+            <h2>Don't Waste Your Time — Connect With Us Now</h2>
+            <p>Have a custom requirement or urgent deadline? Reach out directly and get a quick response.</p>
+            <div class="cta-links">
+                <a href="https://wa.me/+923154813539" target="_blank" rel="noopener" class="btn btn-primary">WhatsApp Now</a>
+                <a href="mailto:greatsibghat65@gmail.com" class="btn btn-secondary">Mail Now</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==============================================================
+         PART 3: POPUP MODAL (PICTURE 4 LAYOUT)
+         ============================================================== -->
+    <div class="modal-overlay" id="serviceModal" aria-hidden="true">
+        <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalServiceName">
+            <button class="modal-close" id="closeModalBtn" title="Close">&times;</button>
+
+            <div class="modal-grid">
+                <!-- Left Column: Service Name + Description of the service -->
+                <div class="modal-left">
+                    <div class="modal-title-box">
+                        <h2 id="modalServiceName">Service Name</h2>
+                    </div>
+                    <div class="modal-desc-box">
+                        <p id="modalServiceDesc">Detailed description of the service goes here.</p>
+                        <ul class="modal-meta-list">
+                            <li><strong>Category:</strong> <span id="modalCategory">General</span></li>
+                            <li><strong>Estimated Delivery:</strong> <span id="modalDelivery">24 - 72 Hours</span></li>
+                            <li><strong>Pricing:</strong> <span id="modalPrice">Custom / Affordable</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Right Column: Full & Adjustable Service Picture + 2 Buttons -->
+                <div class="modal-right">
+                    <div class="modal-img-box">
+                        <img id="modalServiceImg" src="" alt="Service Preview">
+                    </div>
+                    <div class="modal-buttons">
+                        <a id="modalContactBtn" href="contact.html" target="_blank" rel="noopener" class="btn-card btn-contact">Contact Now</a>
+                        <a id="modalOrderBtn" href="mailto:greatsibghat65@gmail.com" class="btn-card btn-explore">Book Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <!-- Customize the date/year easily via the HTML or script below -->
+        <p>&copy; <span id="footerDate">2026</span> M. SibghatUllah. All rights reserved.</p>
+    </footer>
+
+    <!-- ==============================================================
+         CUSTOMIZABLE DATA & INTERACTIVE SCRIPT
+         Edit dates, contact info, images, or service descriptions below
+         ============================================================== -->
+    <script>
+        // 1. EASY CUSTOMIZATION SETTINGS (Change Date & Contact Info Here)
+        const SITE_CONFIG = {
+            footerDate: "2026", // Change to any year or date string e.g. "November 2026"
+            whatsappNumber: "+923154813539",
+            emailAddress: "greatsibghat65@gmail.com"
+        };
+
+        document.getElementById("footerDate").textContent = SITE_CONFIG.footerDate;
+
+        // 2. ALL 31 SERVICES DATA (Replace image URLs or descriptions anytime)
+        const servicesData = [
+            {
+                id: 0,
+                name: "WhatsApp AI Agent",
+                category: "ai-dev",
+                categoryLabel: "AI & Automation",
+                image: "https://raw.githubusercontent.com/SibghatUllah-SARAN/Whatsapp-agent/refs/heads/main/WhatsApp%20Agent.png",
+                trustedDesc: "Custom automated WhatsApp AI agents for instant 24/7 customer support, lead capture, and smart replies.",
+                fullDesc: "We build intelligent WhatsApp AI Agents integrated with your business workflow. Automate FAQs, book appointments, qualify leads, and respond to clients 24/7 with natural, accurate AI conversations.",
+                delivery: "2 – 4 Days",
+                // price: "Custom Package"
+            },
+            {
+                id: 1,
+                name: "Mathematical Thesis Making",
+                category: "academic",
+                categoryLabel: "Academic & Math",
+                image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=800&q=80",
+                trustedDesc: "Complete, well-structured mathematical research theses formatted cleanly in LaTeX or MS Word.",
+                fullDesc: "End-to-end mathematical thesis writing and typesetting with rigorous proofs, theorem formatting, graphs, and proper citations tailored to university standards.",
+                delivery: "5 – 10 Days",
+                // price: "Project Based"
+            },
+            {
+                id: 2,
+                name: "Mathematical Presentation Making",
+                category: "academic",
+                categoryLabel: "Academic & Math",
+                image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=800&q=80",
+                trustedDesc: "Clear, visually engaging math defense and seminar slides with crisp equations and diagrams.",
+                fullDesc: "Professional Beamer (LaTeX) or PowerPoint presentations designed for mathematics thesis defenses, lectures, and academic conferences.",
+                delivery: "1 – 3 Days",
+                // price: "Affordable Student Rate"
+            },
+            {
+                id: 3,
+                name: "CV Making",
+                category: "academic",
+                categoryLabel: "Career & Docs",
+                image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=800&q=80",
+                trustedDesc: "Modern, ATS-friendly academic and professional CVs designed to highlight your strengths.",
+                fullDesc: "Detailed Curriculum Vitae tailored for scholarships, university admissions, and international job applications with clean typography and layout.",
+                delivery: "24 Hours",
+                // price: "Budget Friendly"
+            },
+            {
+                id: 4,
+                name: "Resume Making",
+                category: "academic",
+                categoryLabel: "Career & Docs",
+                image: "https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?auto=format&fit=crop&w=800&q=80",
+                trustedDesc: "High-impact 1-to-2 page resumes crafted to pass recruiter screening and land interviews.",
+                fullDesc: "Concise, keyword-optimized resumes tailored to your target industry with editable source files (Word/PDF).",
+                delivery: "24 Hours",
+                // price: "Budget Friendly"
+            },
+            {
+                id: 5,
+                name: "PPT Presentation Making",
+                category: "design-media",
+                categoryLabel: "Design & Slides",
+                image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80",
+                trustedDesc: "Custom PowerPoint decks for business pitches, class seminars, and project proposals.",
+                fullDesc: "Visually structured PowerPoint presentations with custom infographics, smooth transitions, and clear storytelling.",
+                delivery: "1 – 2 Days",
+                // price: "Per Slide / Deck"
+            },
+            {
+                id: 6,
+                name: "Thesis Content Correction",
+                category: "academic",
+                categoryLabel: "Academic & Math",
+                image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=80",
+                trustedDesc: "Thorough structural editing, formatting fixes, and academic refinement for your thesis.",
+                fullDesc: "We review and fix formatting inconsistencies, weak arguments, citation errors, and structural flow to meet supervisor guidelines.",
+                delivery: "2 – 4 Days",
+                // price: "Word Count Based"
+            },
+            {
+                id: 7,
+                name: "Video Editing",
+                category: "design-media",
+                categoryLabel: "Design & Video",
+                image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80",
+                trustedDesc: "Smooth cuts, captions, sound design, and engaging edits for YouTube, Reels, and TikTok.",
+                fullDesc: "Professional short-form and long-form video editing including transitions, subtitles, color grading, and motion graphics.",
+                delivery: "1 – 3 Days",
+                // price: "Per Video"
+            },
+            {
+                id: 8,
+                name: "Graphic Designing",
+                category: "design-media",
+                categoryLabel: "Design & Video",
+                image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800&q=80",
+                trustedDesc: "Eye-catching social media posts, banners, flyers, and promotional brand visuals.",
+                fullDesc: "Creative graphic design assets tailored for social media campaigns, business branding, events, and print materials.",
+                delivery: "24 – 48 Hours",
+                // price: "Per Design / Bundle"
+            },
+            {
+                id: 9,
+                name: "Logo Making",
+                category: "design-media",
+                categoryLabel: "Design & Video",
+                image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=800&q=80",
+                trustedDesc: "Memorable, scalable brand logos delivered in high-resolution PNG, SVG, and source formats.",
+                fullDesc: "Unique minimalist, modern, or emblem logos crafted from scratch with multiple concepts and revision rounds.",
+                delivery: "1 – 2 Days",
+                // price: "Starter / Brand Kit"
+            },
+            {
+                id: 10,
+                name: "Data Cleaning",
+                category: "marketing-data",
+                categoryLabel: "Data & Analytics",
+                image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+                trustedDesc: "Remove duplicates, fix missing values, and standardize messy datasets using Python & Excel.",
+                fullDesc: "Accurate data preprocessing and sanitization using Pandas, NumPy, and Excel so your datasets are ready for analysis or ML training.",
+                delivery: "1 – 2 Days",
+                // price: "Dataset Size Based"
+            },
+            {
+                id: 11,
+                name: "Data Entry in Excel",
+                category: "marketing-data",
+                categoryLabel: "Data & Analytics",
+                image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+                trustedDesc: "Fast, error-free spreadsheet organization, formulas, tables, and structured data entry.",
+                fullDesc: "Reliable Excel data entry, PDF-to-Excel conversion, pivot tables, and automated formulas with 100% accuracy verification.",
+                delivery: "24 – 48 Hours",
+                // price: "Hourly / Task Based"
+            },
+            {
+                id: 12,
+                name: "Any Type of Mathematical Question Solving",
+                category: "academic",
+                categoryLabel: "Academic & Math",
+                image: "https://images.unsplash.com/photo-1596495578065-6e0763fa1178?auto=format&fit=crop&w=800&q=80",
+                trustedDesc: "Step-by-step, easy-to-follow solutions for Calculus, Linear Algebra, ODEs, Statistics, and more.",
+                fullDesc: "Detailed worked solutions for university and college mathematics problems, complete with clear explanations and clean formatting.",
+                delivery: "Same Day / 24 Hours",
+                // price: "Per Problem / Sheet"
+            },
+            {
+                id: 13,
+                name: "GMB Reviewed (Google My Business)",
+                category: "marketing-data",
+                categoryLabel: "Marketing & SEO",
+                image: "https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?auto=format&fit=crop&w=800&q=80",
+                trustedDesc: "Local business profile optimization and reputation support to boost Google Maps visibility.",
+                fullDesc: "Improve your local search presence and Google Business Profile credibility to attract more local customers.",
+                delivery: "1 – 3 Days",
+                // price: "Custom Package"
+            },
+            {
+                id: 14,
+                name: "SEO (Search Engine Optimization)",
+                category: "marketing-data",
+                categoryLabel: "Marketing & SEO",
+                image: "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&w=800&q=80",
+                trustedDesc: "On-page, technical, and keyword SEO strategies to rank your website higher on Google.",
+                fullDesc: "Complete SEO audits, meta tag optimization, keyword research, and speed improvements to drive organic traffic.",
+                delivery: "3 – 7 Days",
+                // price: "Monthly / Audit"
+            },
+            {
+                id: 15,
+                name: "Web Designing",
+                category: "ai-dev",
+                categoryLabel: "Web & Dev",
+                image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80",
+                trustedDesc: "Clean, modern, mobile-first UI/UX layouts tailored to convert visitors into clients.",
+                fullDesc: "Responsive website wireframes and visual designs focused on intuitive navigation, brand consistency, and fast performance.",
+                delivery: "2 – 5 Days",
+                // price: "Page / Site Based"
+            },
+            {
+                id: 16,
+                name: "Front-End Development",
+                category: "ai-dev",
+                categoryLabel: "Web & Dev",
+                image: "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=800&q=80",
+                trustedDesc: "Pixel-perfect, responsive websites built with clean HTML5, CSS3, and modern JavaScript.",
+                fullDesc: "Interactive, cross-browser compatible front-end web applications with smooth animations and clean, maintainable code.",
+                delivery: "3 – 7 Days",
+                // price: "Project Based"
+            },
+            {
+                id: 17,
+                name: "Final Year Project (FYP)",
+                category: "ai-dev",
+                categoryLabel: "Academic & Dev",
+                image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80",
+                trustedDesc: "Complete Final Year Projects with working source code, documentation, and viva preparation.",
+                fullDesc: "End-to-end development and documentation support for university Final Year Projects across software, web, data, and AI domains.",
+                delivery: "7 – 14 Days",
+                // price: "Complete Package"
+            },
+            {
+                id: 18,
+                name: "Academic Research",
+                category: "academic",
+                categoryLabel: "Academic & Math",
+                image: "https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=800&q=80",
+                trustedDesc: "Structured literature reviews, research papers, and data-backed academic manuscripts.",
+                fullDesc: "Comprehensive academic research assistance including literature synthesis, methodology design, and APA/IEEE/MLA referencing.",
+                delivery: "3 – 7 Days",
+                // price: "Project Based"
+            },
+            {
+                id: 19,
+                name: "Plagiarism Reports",
+                category: "academic",
+                categoryLabel: "Academic & Math",
+                image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800&q=80",
+                trustedDesc: "Fast, accurate similarity and AI-detection reports so you submit with complete confidence.",
+                fullDesc: "Detailed plagiarism similarity reports highlighting matched sources along with guidance on reducing similarity scores safely.",
+                delivery: "Within Hours",
+                // price: "Low Fixed Rate"
+            },
+            {
+                id: 20,
+                name: "Grammar Mistake Checking & Scholar Authentication",
+                category: "academic",
+                categoryLabel: "Academic & Math",
+                image: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=800&q=80",
+                trustedDesc: "Deep proofreading and academic tone authentication reviewed by experienced scholars.",
+                fullDesc: "Line-by-line grammar, punctuation, syntax, and scholarly tone verification to ensure publication-ready quality.",
+                delivery: "1 – 2 Days",
+                // price: "Word Count Based"
+            },
+            {
+                id: 21,
+                name: "Coding Programs",
+                category: "ai-dev",
+                categoryLabel: "Programming",
+                image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
+                trustedDesc: "Clean, well-commented programming tasks, algorithms, and debugging across multiple languages.",
+                fullDesc: "Custom scripts, data structures, algorithm implementations, and bug fixes with clear explanations of how the code works.",
+                delivery: "24 – 48 Hours",
+                // price: "Task Based"
+            },
+            {
+                id: 22,
+                name: "Python Final Year Project",
+                category: "ai-dev",
+                categoryLabel: "Programming",
+                image: "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?auto=format&fit=crop&w=800&q=80",
+                trustedDesc: "Full Python FYPs using Django, Flask, Pandas, OpenCV, or AI/ML libraries with full documentation.",
+                fullDesc: "Complete Python-based Final Year Projects including backend logic, GUI/web interface, dataset integration, and project report.",
+                delivery: "5 – 12 Days",
+                // price: "Complete Package"
+            },
+            {
+                id: 23,
+                name: "C++ Final Year Project",
+                category: "ai-dev",
+                categoryLabel: "Programming",
+                image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=800&q=80",
+                trustedDesc: "Object-oriented C++ applications, management systems, and algorithmic projects.",
+                fullDesc: "Well-structured C++ projects utilizing OOP, file handling, data structures, and clean modular code ready for defense.",
+                delivery: "5 – 10 Days",
+                // price: "Complete Package"
+            },
+            {
+                id: 24,
+                name: "JavaScript Final Year Project",
+                category: "ai-dev",
+                categoryLabel: "Programming",
+                image: "https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?auto=format&fit=crop&w=800&q=80",
+                trustedDesc: "Interactive full-stack or front-end JS web apps built with modern ES6+, Node.js, or React.",
+                fullDesc: "Dynamic JavaScript Final Year Projects featuring responsive UI, REST APIs, real-time interactivity, and deployment support.",
+                delivery: "5 – 12 Days",
+                // price: "Complete Package"
+            },
+            {
+                id: 25,
+                name: "SQL Final Year Projects",
+                category: "ai-dev",
+                categoryLabel: "Database & Dev",
+                image: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=800&q=80",
+                trustedDesc: "Normalized relational databases, ER diagrams, complex queries, and management systems.",
+                fullDesc: "Complete MySQL/PostgreSQL database projects featuring schema normalization, stored procedures, triggers, and ERD documentation.",
+                delivery: "4 – 8 Days",
+                // price: "Complete Package"
+            },
+            {
+                id: 26,
+                name: "Blog for Students",
+                category: "academic",
+                categoryLabel: "Content & Web",
+                image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=800&q=80",
+                trustedDesc: "Informative, SEO-ready educational articles and student blog setups.",
+                fullDesc: "Engaging academic guides, study resources, and custom student blog websites designed to share knowledge and grow readership.",
+                delivery: "1 – 3 Days",
+                // price: "Article / Site Based"
+            },
+            {
+                id: 27,
+                name: "Portfolio Website Making",
+                category: "ai-dev",
+                categoryLabel: "Web & Dev",
+                image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=800&q=80",
+                trustedDesc: "Personal multi-page or single-page portfolio websites to showcase your skills and projects.",
+                fullDesc: "Custom responsive portfolio websites with dark/light themes, project galleries, service popups, and direct WhatsApp/Email integration.",
+                delivery: "2 – 4 Days",
+                // price: "Affordable Package"
+            },
+            {
+                id: 28,
+                name: "Research ML Model",
+                category: "ai-dev",
+                categoryLabel: "AI & Machine Learning",
+                image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=800&q=80",
+                trustedDesc: "Custom Machine Learning models trained, evaluated, and documented for academic research.",
+                fullDesc: "End-to-end ML pipelines in Python (Scikit-Learn, TensorFlow/PyTorch) with feature engineering, accuracy metrics, confusion matrices, and research write-ups.",
+                delivery: "4 – 8 Days",
+                // price: "Project Based"
+            },
+            {
+                id: 29,
+                name: "Multi-Disciplinary Thesis & Presentations",
+                category: "academic",
+                categoryLabel: "Law | Business | CS | Geo | Eng",
+                image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80",
+                trustedDesc: "Specialized thesis & slide decks for Law, Business, Computer Science, Geography & Engineering.",
+                fullDesc: "Subject-tailored research theses and defense presentations covering Law, Business Administration, Computer Science, Geography, and Engineering disciplines.",
+                delivery: "5 – 10 Days",
+                // price: "Project Based"
+            },
+            {
+                id: 30,
+                name: "Multi-Platform Digital Ads",
+                category: "marketing-data",
+                categoryLabel: "Google | Meta | IG | YT | TikTok",
+                image: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&w=800&q=80",
+                trustedDesc: "Targeted ad campaigns across Google, Meta (Facebook), Instagram, YouTube, and TikTok.",
+                fullDesc: "High-converting ad setup, audience targeting, ad copy, and campaign optimization across Google Ads, Meta, Instagram, YouTube, and TikTok.",
+                delivery: "1 – 3 Days",
+                // price: "Campaign Based"
+            }
+        ];
+
+        // 3. RENDER CARDS (PICTURE 3 STRUCTURE)
+        const servicesGrid = document.getElementById("servicesGrid");
+        const searchInput = document.getElementById("serviceSearch");
+        const filterBtns = document.querySelectorAll(".filter-btn");
+
+        let activeFilter = "all";
+
+        function renderServices() {
+            const query = searchInput.value.toLowerCase().trim();
+            servicesGrid.innerHTML = "";
+
+            const filtered = servicesData.filter(service => {
+                const matchesCategory = activeFilter === "all" || service.category === activeFilter;
+                const matchesSearch = service.name.toLowerCase().includes(query) ||
+                                      service.trustedDesc.toLowerCase().includes(query) ||
+                                      service.categoryLabel.toLowerCase().includes(query);
+                return matchesCategory && matchesSearch;
+            });
+
+            if (filtered.length === 0) {
+                servicesGrid.innerHTML = `<p style="grid-column: 1/-1; text-align:center; color: var(--text-secondary); padding: 2rem;">No matching services found. Try another keyword!</p>`;
+                return;
+            }
+
+            filtered.forEach(service => {
+                const whatsappMsg = encodeURIComponent(`Hello M. SibghatUllah, I am interested in your service: ${service.name}`);
+                const whatsappUrl = `https://wa.me/${SITE_CONFIG.whatsappNumber}?text=${whatsappMsg}`;
+
+                const card = document.createElement("article");
+                card.className = "service-card";
+                card.innerHTML = `
+                    <!-- Picture 3: Service Picture -->
+                    <div class="service-img-box">
+                        <img src="${service.image}" alt="${service.name}" loading="lazy">
+                        <span class="service-badge">${service.categoryLabel}</span>
+                    </div>
+
+                    <!-- Picture 3: Name of service -->
+                    <div class="service-title-box">
+                        <h3>${service.name}</h3>
+                    </div>
+
+                    <!-- Picture 3: Trusted Description -->
+                    <div class="service-desc-box">
+                        <p>${service.trustedDesc}</p>
+                    </div>
+
+                    <!-- Picture 3: Contact & Explore Buttons -->
+                    <div class="service-actions">
+                        <a href="${whatsappUrl}" target="_blank" rel="noopener" class="btn-card btn-contact">Contact</a>
+                        <button type="button" class="btn-card btn-explore" onclick="openServiceModal(${service.id})">Explore</button>
+                    </div>
+                `;
+                servicesGrid.appendChild(card);
+            });
+        }
+
+        // 4. POPUP MODAL LOGIC (PICTURE 4 STRUCTURE)
+        const modal = document.getElementById("serviceModal");
+        const closeModalBtn = document.getElementById("closeModalBtn");
+
+        function openServiceModal(serviceId) {
+            const service = servicesData.find(s => s.id === serviceId);
+            if (!service) return;
+
+            document.getElementById("modalServiceName").textContent = service.name;
+            document.getElementById("modalServiceDesc").textContent = service.fullDesc;
+            document.getElementById("modalCategory").textContent = service.categoryLabel;
+            document.getElementById("modalDelivery").textContent = service.delivery;
+            document.getElementById("modalPrice").textContent = service.price;
+
+            const modalImg = document.getElementById("modalServiceImg");
+            modalImg.src = service.image;
+            modalImg.alt = service.name;
+
+            const waMsg = encodeURIComponent(`Hello M. SibghatUllah, I would like to inquire about: ${service.name}`);
+            document.getElementById("modalContactBtn").href = `https://wa.me/${SITE_CONFIG.whatsappNumber}?text=${waMsg}`;
+
+            const mailSubject = encodeURIComponent(`Service Inquiry: ${service.name}`);
+            document.getElementById("modalOrderBtn").href = `mailto:${SITE_CONFIG.emailAddress}?subject=${mailSubject}`;
+
+            modal.classList.add("active");
+            modal.setAttribute("aria-hidden", "false");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeServiceModal() {
+            modal.classList.remove("active");
+            modal.setAttribute("aria-hidden", "true");
+            document.body.style.overflow = "";
+        }
+
+        closeModalBtn.addEventListener("click", closeServiceModal);
+
+        // Close popup when clicking outside the modal box or pressing Escape
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal) closeServiceModal();
+        });
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && modal.classList.contains("active")) {
+                closeServiceModal();
+            }
+        });
+
+        // Search & Filter Listeners
+        searchInput.addEventListener("input", renderServices);
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener("click", () => {
+                filterBtns.forEach(b => b.classList.remove("active"));
+                btn.classList.add("active");
+                activeFilter = btn.dataset.filter;
+                renderServices();
+            });
+        });
+
+        // Initial Render
+        renderServices();
+    </script>
+
+</body>
+</html>
