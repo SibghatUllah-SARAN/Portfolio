@@ -6,13 +6,23 @@
     <title>Skills | M. SibghatUllah</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="skills.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <!-- Navbar with 3-Line Mobile Hamburger Menu -->
     <header>
         <nav class="navbar">
             <a href="index.html" class="logo">M. Sibghat<span>Ullah</span></a>
-            <ul class="nav-links">
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="education.html">Education</a></li>
@@ -26,122 +36,409 @@
 
     <main class="container">
         <h1 class="page-title">Technical Skills</h1>
-        <p class="page-subtitle">Core technical capabilities across programming, AI, and mathematics.</p>
+        <p class="page-subtitle">Core technical capabilities across programming, AI, and mathematics. Click any card to explore details.</p>
 
-        <div class="grid-3">
-            <!-- SKILL CATEGORY 1 -->
-            <div class="card">
-                <h3>Programming & AI</h3>
-                <div class="tag-list">
-                    <span class="tag">Python</span>
-                    <span class="tag">Machine Learning</span>
-                    <span class="tag">Custom AI Agents</span>
-                    <span class="tag">JavaScript</span>
-                    <span class="tag">HTML5 & CSS3</span>
+        <!-- Category 1: Programming, Data & AI -->
+        <section class="skills-category">
+            <h2 class="category-title">Programming, Data & AI</h2>
+            <div class="skills-grid" id="grid-programming"></div>
+        </section>
+
+        <!-- Category 2: Web Development & Automation -->
+        <section class="skills-category">
+            <h2 class="category-title">Web Development & Automation</h2>
+            <div class="skills-grid" id="grid-web"></div>
+        </section>
+
+        <!-- Category 3: Mathematics & Computational Modeling -->
+        <section class="skills-category">
+            <h2 class="category-title">Mathematics & Computational Modeling</h2>
+            <div class="skills-grid" id="grid-math"></div>
+        </section>
+
+        <!-- Merged Passion for Technology & Certifications Section -->
+        <section class="about-card" id="about-tech">
+            <div class="about-section-header">
+                <h2>My Passion for Technology</h2>
+            </div>
+            <p>
+                Technology is one of the most exciting areas of my journey. I enjoy learning how digital systems work, how applications are developed, and how programming can solve real-world problems.
+            </p>
+
+            <div class="about-grid-2">
+                <div class="about-subcard">
+                    <h3>1. Programming & Software Development</h3>
+                    <p>Transforming logical thinking into practical solutions.</p>
+                    <div>
+                        <span class="about-badge">Python</span>
+                        <span class="about-badge">JavaScript</span>
+                        <span class="about-badge">C++</span>
+                        <span class="about-badge">SQL</span>
+                        <span class="about-badge">HTML5</span>
+                        <span class="about-badge">CSS3</span>
+                        <span class="about-badge">NumPy</span>
+                        <span class="about-badge">Pandas</span>
+                    </div>
+                </div>
+
+                <div class="about-subcard">
+                    <h3>2. Artificial Intelligence & Machine Learning</h3>
+                    <p>Building systems that analyze data, recognize patterns, and assist decisions.</p>
+                    <ul class="about-list">
+                        <li>Machine Learning & Deep Learning</li>
+                        <li>Natural Language Processing & LLMs</li>
+                        <li>AI Agents & Intelligent Automation</li>
+                        <li>Sentiment Analysis & Data Preprocessing</li>
+                    </ul>
+                </div>
+
+                <div class="about-subcard">
+                    <h3>3. Web Development & Digital Experiences</h3>
+                    <p>Combining engineering, creativity, and responsive user experience.</p>
+                    <ul class="about-list">
+                        <li>Responsive Web Design & Modern UI</li>
+                        <li>Frontend & Backend Integration</li>
+                        <li>Portfolio Sites & E-commerce Solutions</li>
+                        <li>API & Database Integration</li>
+                    </ul>
+                </div>
+
+                <div class="about-subcard">
+                    <h3>4. Data & Automation</h3>
+                    <p>Optimizing workflows to focus on innovation and creativity.</p>
+                    <ul class="about-list">
+                        <li>Data Cleaning & Analysis</li>
+                        <li>Python & Excel Automation</li>
+                        <li>SQL Database Management</li>
+                        <li>Workflow Optimization</li>
+                    </ul>
                 </div>
             </div>
 
-            <!-- SKILL CATEGORY 2 -->
-            <div class="card">
-                <h3>Mathematics & Data</h3>
-                <div class="tag-list">
-                    <span class="tag">Linear Algebra</span>
-                    <span class="tag">Gauss-Jordan Elimination</span>
-                    <span class="tag">NumPy</span>
-                    <span class="tag">Pandas</span>
-                    <span class="tag">Differential Equations</span>
-                </div>
+            <div class="about-user-placeholder">
+                <strong>Certifications & Training:</strong> Amal Academy, Ayan, Skill Nook, Python, Machine Learning & Artificial Intelligence Certifications.
             </div>
 
-            <!-- SKILL CATEGORY 3 -->
-            <div class="card">
-                <h3>Tools & Automation</h3>
-                <div class="tag-list">
-                    <span class="tag">n8n Automation</span>
-                    <span class="tag">Meta Developer APIs</span>
-                    <span class="tag">REST APIs</span>
-                    <span class="tag">Git & GitHub</span>
-                    <span class="tag">Windows & CLI</span>
-                </div>
+            <div class="about-btn-container">
+                <a href="services.html" class="about-btn">View Detailed Services</a>
+                <a href="projects.html" class="about-btn about-btn-outline">Creative Projects &rarr;</a>
             </div>
-        </div>
+        </section>
     </main>
 
-    <!-- 4. Passion for Technology Section -->
+    <!-- Skill Detail Popup Modal -->
+    <div class="modal-overlay" id="skillModal" aria-hidden="true">
+        <div class="modal-box" role="dialog" aria-modal="true">
+            <button class="modal-close" id="closeModalBtn" aria-label="Close popup">&times;</button>
+            
+            <div class="modal-grid">
+                <!-- Left Column: Skill Name + Description -->
+                <div class="modal-left">
+                    <div class="modal-title-box">
+                        <img id="modalIcon" src="" alt="">
+                        <h2 id="modalTitle">Skill Name</h2>
+                    </div>
+                    <div class="modal-desc-box">
+                        <p id="modalDescription">Detailed description goes here.</p>
+                        <ul id="modalHighlights"></ul>
+                    </div>
+                </div>
 
-    <section class="about-card" id="about-tech">
-      <div class="about-section-header">
-        <h2>My Passion for Technology</h2>
-      </div>
-      <p>
-        Technology is one of the most exciting areas of my journey. I enjoy learning how digital systems work, how applications are developed, and how programming can solve real-world problems.
-      </p>
-
-      <div class="about-grid-2">
-        <div class="about-subcard">
-          <h3>1. Programming & Software Development</h3>
-          <p>Transforming logical thinking into practical solutions.</p>
-          <div>
-            <span class="about-badge">Python</span>
-            <span class="about-badge">JavaScript</span>
-            <span class="about-badge">C++</span>
-            <span class="about-badge">SQL</span>
-            <span class="about-badge">HTML5</span>
-            <span class="about-badge">CSS3</span>
-            <span class="about-badge">NumPy</span>
-            <span class="about-badge">Pandas</span>
-          </div>
+                <!-- Right Column: Adjustable Picture + Action Buttons -->
+                <div class="modal-right">
+                    <div class="modal-image-box">
+                        <img id="modalPreviewImg" src="" alt="Skill visual preview">
+                    </div>
+                    <div class="modal-actions">
+                        <a href="services.html" id="btnExploreServices" class="btn btn-primary">Explore Services</a>
+                        <a href="projects.html" id="btnExploreProjects" class="btn btn-secondary">Explore Projects</a>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="about-subcard">
-          <h3>2. Artificial Intelligence & Machine Learning</h3>
-          <p>Building systems that analyze data, recognize patterns, and assist decisions.</p>
-          <ul class="about-list">
-            <li>Machine Learning & Deep Learning</li>
-            <li>Natural Language Processing & LLMs</li>
-            <li>AI Agents & Intelligent Automation</li>
-            <li>Sentiment Analysis & Data Preprocessing</li>
-          </ul>
-        </div>
-
-        <div class="about-subcard">
-          <h3>3. Web Development & Digital Experiences</h3>
-          <p>Combining engineering, creativity, and responsive user experience.</p>
-          <ul class="about-list">
-            <li>Responsive Web Design & Modern UI</li>
-            <li>Frontend & Backend Integration</li>
-            <li>Portfolio Sites & E-commerce Solutions</li>
-            <li>API & Database Integration</li>
-          </ul>
-        </div>
-
-        <div class="about-subcard">
-          <h3>4. Data & Automation</h3>
-          <p>Optimizing workflows to focus on innovation and creativity.</p>
-          <ul class="about-list">
-            <li>Data Cleaning & Analysis</li>
-            <li>Python & Excel Automation</li>
-            <li>SQL Database Management</li>
-            <li>Workflow Optimization</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Fill-in placeholder -->
-      <div class="about-user-placeholder">
-        <em>Certifications & Training Details:  Amal Academy, Skill Nook, Python Certifications, etc.</em>
-      </div>
-
-      <div class="about-btn-container">
-        <a href="services.html" class="about-btn">View Detailed Services</a>
-        <a href="proects.html" class="about-btn about-btn-outline">Creative Projects &rarr;</a>
-      </div>
-    </section>
-
+    </div>
 
     <footer>
         <p>&copy; 2026 M. SibghatUllah. All rights reserved.</p>
     </footer>
 
+    <script>
+        // ==================================================================
+        // 1. MOBILE THREE-LINE HAMBURGER MENU TOGGLE
+        // ==================================================================
+        const menuToggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
+
+        menuToggle.addEventListener("click", () => {
+            const isOpen = navLinks.classList.toggle("active");
+            menuToggle.classList.toggle("open", isOpen);
+            menuToggle.setAttribute("aria-expanded", isOpen);
+        });
+
+        // Close mobile menu when a link is clicked
+        navLinks.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("active");
+                menuToggle.classList.remove("open");
+                menuToggle.setAttribute("aria-expanded", "false");
+            });
+        });
+
+        // ==================================================================
+        // 2. INTERACTIVE SKILLS DATA & POPUP MODAL
+        // ==================================================================
+        const skillsData = [
+            // --- Programming, Data & AI ---
+            {
+                category: "programming",
+                name: "Python",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
+                description: "Core language for mathematical modeling, data cleaning pipelines, browser automation, and backend AI agent orchestration.",
+                highlights: ["Data analysis & numerical computing", "Custom automation scripts & bots", "API integrations & backend logic"],
+                previewImage: "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?auto=format&fit=crop&w=800&q=80",
+                imageFit: "cover",
+                serviceLink: "services.html",
+                projectLink: "projects.html"
+            },
+            {
+                category: "programming",
+                name: "NumPy",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg",
+                description: "High-performance vectorized array operations, linear algebra solvers, and matrix transformations for scientific computing.",
+                highlights: ["Matrix & linear system solvers", "Numerical simulations & differential equations", "Fast multi-dimensional array processing"],
+                previewImage: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=800&q=80",
+                imageFit: "cover",
+                serviceLink: "services.html",
+                projectLink: "projects.html"
+            },
+            {
+                category: "programming",
+                name: "Pandas",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg",
+                description: "Structured data wrangling, cleaning messy CSV/Excel datasets, statistical aggregation, and automated reporting.",
+                highlights: ["Data cleaning & transformation", "Exploratory data analysis (EDA)", "Automated Excel/CSV pipeline exports"],
+                previewImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+                imageFit: "cover",
+                serviceLink: "services.html",
+                projectLink: "projects.html"
+            },
+            {
+                category: "programming",
+                name: "Machine Learning",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg",
+                description: "Supervised and unsupervised predictive modeling, feature engineering, and LLM-powered intelligent agents.",
+                highlights: ["Regression & classification models", "Custom AI agents & RAG workflows", "Model evaluation & optimization"],
+                previewImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80",
+                imageFit: "cover",
+                serviceLink: "services.html",
+                projectLink: "projects.html"
+            },
+            {
+                category: "programming",
+                name: "C++",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg",
+                description: "Strong foundation in algorithmic problem-solving, memory management, data structures, and computational efficiency.",
+                highlights: ["Data structures & algorithms", "Object-oriented system design", "Mathematical algorithm implementation"],
+                previewImage: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=800&q=80",
+                imageFit: "cover",
+                serviceLink: "services.html",
+                projectLink: "projects.html"
+            },
+            {
+                category: "programming",
+                name: "SQL",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
+                description: "Relational database querying, schema design, complex joins, and structured storage for web and automation apps.",
+                highlights: ["Relational database architecture", "Optimized queries & indexing", "Data extraction for analytics"],
+                previewImage: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=800&q=80",
+                imageFit: "cover",
+                serviceLink: "services.html",
+                projectLink: "projects.html"
+            },
+
+            // --- Web Development & Automation ---
+            {
+                category: "web",
+                name: "HTML5",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
+                description: "Semantic, accessible, and SEO-friendly markup for responsive portfolios, landing pages, and web applications.",
+                highlights: ["Clean semantic structure", "SEO & accessibility best practices", "Fast-loading static architectures"],
+                previewImage: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=800&q=80",
+                imageFit: "cover",
+                serviceLink: "services.html",
+                projectLink: "projects.html"
+            },
+            {
+                category: "web",
+                name: "CSS3",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
+                description: "Modern responsive layouts using CSS Grid, Flexbox, custom variables, smooth animations, and dark/light themes.",
+                highlights: ["Mobile-first responsive grids", "Custom animations & hover effects", "Theme systems & modern UI styling"],
+                previewImage: "https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?auto=format&fit=crop&w=800&q=80",
+                imageFit: "cover",
+                serviceLink: "services.html",
+                projectLink: "projects.html"
+            },
+            {
+                category: "web",
+                name: "JavaScript",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+                description: "Interactive DOM manipulation, asynchronous API fetching, dynamic UI components, and client-side logic.",
+                highlights: ["Interactive modals, filters & animations", "REST API integration (Fetch/Async)", "Dynamic single-page behaviors"],
+                previewImage: "https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?auto=format&fit=crop&w=800&q=80",
+                imageFit: "cover",
+                serviceLink: "services.html",
+                projectLink: "projects.html"
+            },
+            {
+                category: "web",
+                name: "n8n Automation",
+                icon: "https://cdn.simpleicons.org/n8n/EA4B71",
+                description: "End-to-end visual workflow automation connecting WhatsApp, Meta APIs, AI agents, and business CRMs.",
+                highlights: ["WhatsApp & social chatbot workflows", "Multi-step webhook & API pipelines", "Automated lead & data routing"],
+                previewImage: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
+                imageFit: "cover",
+                serviceLink: "services.html",
+                projectLink: "projects.html"
+            },
+            {
+                category: "web",
+                name: "REST & Meta APIs",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg",
+                description: "Connecting third-party services, webhooks, Meta Developer endpoints, and custom data backends.",
+                highlights: ["JSON payload handling & auth", "Meta WhatsApp & Graph API webhooks", "Seamless frontend-to-backend sync"],
+                previewImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80",
+                imageFit: "cover",
+                serviceLink: "services.html",
+                projectLink: "projects.html"
+            },
+            {
+                category: "web",
+                name: "Git & GitHub",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg",
+                description: "Version control, collaborative branching workflows, and static site deployment via GitHub Pages.",
+                highlights: ["Clean commit & branch management", "GitHub Pages hosting & CI/CD", "Open-source portfolio documentation"],
+                previewImage: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?auto=format&fit=crop&w=800&q=80",
+                imageFit: "cover",
+                serviceLink: "services.html",
+                projectLink: "projects.html"
+            },
+
+            // --- Mathematics & Computational Modeling (From original skills.html) ---
+            {
+                category: "math",
+                name: "Linear Algebra",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matlab/matlab-original.svg",
+                description: "Vector spaces, eigenvalues, matrix decompositions, and multi-variable linear system modeling.",
+                highlights: ["Matrix operations & transformations", "Eigenvalue & eigenvector analysis", "Applied engineering & circuit modeling"],
+                previewImage: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=800&q=80",
+                imageFit: "cover",
+                serviceLink: "services.html",
+                projectLink: "projects.html"
+            },
+            {
+                category: "math",
+                name: "Gauss-Jordan Elimination",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jupyter/jupyter-original.svg",
+                description: "Exact algorithmic row-reduction techniques for solving systems of linear equations and multi-loop electrical networks.",
+                highlights: ["Reduced row echelon form (RREF) algorithms", "Kirchhoff's laws multi-loop circuit solving", "Automated Python matrix solvers"],
+                previewImage: "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=800&q=80",
+                imageFit: "cover",
+                serviceLink: "services.html",
+                projectLink: "projects.html"
+            },
+            {
+                category: "math",
+                name: "Differential Equations",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/latex/latex-original.svg",
+                description: "Analytical and numerical solutions to ordinary differential equations (ODEs), exact equations, and initial value problems.",
+                highlights: ["First & higher-order ODEs", "Initial value problems (IVPs)", "Dynamic physical system modeling"],
+                previewImage: "https://images.unsplash.com/photo-1596495578065-6e0763fa1178?auto=format&fit=crop&w=800&q=80",
+                imageFit: "cover",
+                serviceLink: "services.html",
+                projectLink: "projects.html"
+            }
+        ];
+
+        function renderSkills() {
+            const grids = {
+                programming: document.getElementById("grid-programming"),
+                web: document.getElementById("grid-web"),
+                math: document.getElementById("grid-math")
+            };
+
+            skillsData.forEach((skill, index) => {
+                const card = document.createElement("div");
+                card.className = "skill-card";
+                card.setAttribute("role", "button");
+                card.setAttribute("tabindex", "0");
+                card.innerHTML = `
+                    <div class="skill-icon-box">
+                        <img src="${skill.icon}" alt="${skill.name} logo" loading="lazy">
+                    </div>
+                    <span class="skill-card-title">${skill.name}</span>
+                    <span class="skill-card-hint">Click to view</span>
+                `;
+
+                card.addEventListener("click", () => openSkillModal(index));
+                card.addEventListener("keydown", (e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        openSkillModal(index);
+                    }
+                });
+
+                if (grids[skill.category]) {
+                    grids[skill.category].appendChild(card);
+                }
+            });
+        }
+
+        const modal = document.getElementById("skillModal");
+        const closeModalBtn = document.getElementById("closeModalBtn");
+
+        function openSkillModal(index) {
+            const skill = skillsData[index];
+
+            document.getElementById("modalIcon").src = skill.icon;
+            document.getElementById("modalIcon").alt = skill.name;
+            document.getElementById("modalTitle").textContent = skill.name;
+            document.getElementById("modalDescription").textContent = skill.description;
+
+            const highlightsList = document.getElementById("modalHighlights");
+            highlightsList.innerHTML = skill.highlights
+                .map(item => `<li>${item}</li>`)
+                .join("");
+
+            const previewImg = document.getElementById("modalPreviewImg");
+            previewImg.src = skill.previewImage;
+            previewImg.style.objectFit = skill.imageFit || "cover";
+
+            document.getElementById("btnExploreServices").href = skill.serviceLink;
+            document.getElementById("btnExploreProjects").href = skill.projectLink;
+
+            modal.classList.add("active");
+            modal.setAttribute("aria-hidden", "false");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeSkillModal() {
+            modal.classList.remove("active");
+            modal.setAttribute("aria-hidden", "true");
+            document.body.style.overflow = "";
+        }
+
+        closeModalBtn.addEventListener("click", closeSkillModal);
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal) closeSkillModal();
+        });
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && modal.classList.contains("active")) {
+                closeSkillModal();
+            }
+        });
+
+        renderSkills();
+    </script>
 </body>
 </html>
